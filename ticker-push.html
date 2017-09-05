@@ -1,0 +1,129 @@
+<script type="text/javascript">
+  RED.nodes.registerType('ticker-push', {
+    category: 'poloniex',
+    color: '#C0DEED',
+    defaults: {
+      name: { value: "" },
+      pair: { value: "", required: true },
+    },
+    inputs: 0,
+    outputs: 2,
+    icon: "poloniex.png",
+    label: function () {
+      return this.name || this.pair || "ticker-push";
+    },
+    outputLabels: ["response", "error"],
+  });
+
+</script>
+
+<script type="text/x-red" data-template-name="ticker-push">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-pair"><i class="icon-tag"></i> Currency Pair</label>
+    <select id="node-input-pair" placeholder="Select currency pair...">
+          <option value="BTC_BCN">BTC_BCN</option>
+          <option value="BTC_BELA">BTC_BELA</option>
+          <option value="BTC_BLK">BTC_BLK</option>
+          <option value="BTC_BTCD">BTC_BTCD</option>
+          <option value="BTC_BTM">BTC_BTM</option>
+          <option value="BTC_BTS">BTC_BTS</option>
+          <option value="BTC_BURST">BTC_BURST</option>
+          <option value="BTC_CLAM">BTC_CLAM</option>
+          <option value="BTC_DASH">BTC_DASH</option>
+          <option value="BTC_DGB">BTC_DGB</option>
+          <option value="BTC_DOGE">BTC_DOGE</option>
+          <option value="BTC_EMC2">BTC_EMC2</option>
+          <option value="BTC_FLDC">BTC_FLDC</option>
+          <option value="BTC_FLO">BTC_FLO</option>
+          <option value="BTC_GAME">BTC_GAME</option>
+          <option value="BTC_GRC">BTC_GRC</option>
+          <option value="BTC_HUC">BTC_HUC</option>
+          <option value="BTC_LTC">BTC_LTC</option>
+          <option value="BTC_MAID">BTC_MAID</option>
+          <option value="BTC_OMNI">BTC_OMNI</option>
+          <option value="BTC_NAUT">BTC_NAUT</option>
+          <option value="BTC_NAV">BTC_NAV</option>
+          <option value="BTC_NEOS">BTC_NEOS</option>
+          <option value="BTC_NMC">BTC_NMC</option>
+          <option value="BTC_NOTE">BTC_NOTE</option>
+          <option value="BTC_NXT">BTC_NXT</option>
+          <option value="BTC_PINK">BTC_PINK</option>
+          <option value="BTC_POT">BTC_POT</option>
+          <option value="BTC_PPC">BTC_PPC</option>
+          <option value="BTC_RIC">BTC_RIC</option>
+          <option value="BTC_SJCX">BTC_SJCX</option>
+          <option value="BTC_STR">BTC_STR</option>
+          <option value="BTC_SYS">BTC_SYS</option>
+          <option value="BTC_VIA">BTC_VIA</option>
+          <option value="BTC_XVC">BTC_XVC</option>
+          <option value="BTC_VRC">BTC_VRC</option>
+          <option value="BTC_VTC">BTC_VTC</option>
+          <option value="BTC_XBC">BTC_XBC</option>
+          <option value="BTC_XCP">BTC_XCP</option>
+          <option value="BTC_XEM">BTC_XEM</option>
+          <option value="BTC_XMR">BTC_XMR</option>
+          <option value="BTC_XPM">BTC_XPM</option>
+          <option value="BTC_XRP">BTC_XRP</option>
+          <option value="USDT_BTC">USDT_BTC</option>
+          <option value="USDT_DASH">USDT_DASH</option>
+          <option value="USDT_LTC">USDT_LTC</option>
+          <option value="USDT_NXT">USDT_NXT</option>
+          <option value="USDT_STR">USDT_STR</option>
+          <option value="USDT_XMR">USDT_XMR</option>
+          <option value="USDT_XRP">USDT_XRP</option>
+          <option value="XMR_BCN">XMR_BCN</option>
+          <option value="XMR_BLK">XMR_BLK</option>
+          <option value="XMR_BTCD">XMR_BTCD</option>
+          <option value="XMR_DASH">XMR_DASH</option>
+          <option value="XMR_LTC">XMR_LTC</option>
+          <option value="XMR_MAID">XMR_MAID</option>
+          <option value="XMR_NXT">XMR_NXT</option>
+          <option value="BTC_ETH">BTC_ETH</option>
+          <option value="USDT_ETH">USDT_ETH</option>
+          <option value="BTC_SC">BTC_SC</option>
+          <option value="BTC_BCY">BTC_BCY</option>
+          <option value="BTC_EXP">BTC_EXP</option>
+          <option value="BTC_FCT">BTC_FCT</option>
+          <option value="BTC_RADS">BTC_RADS</option>
+          <option value="BTC_AMP">BTC_AMP</option>
+          <option value="BTC_DCR">BTC_DCR</option>
+          <option value="BTC_LSK">BTC_LSK</option>
+          <option value="ETH_LSK">ETH_LSK</option>
+          <option value="BTC_LBC">BTC_LBC</option>
+          <option value="BTC_STEEM">BTC_STEEM</option>
+          <option value="ETH_STEEM">ETH_STEEM</option>
+          <option value="BTC_SBD">BTC_SBD</option>
+          <option value="BTC_ETC">BTC_ETC</option>
+          <option value="ETH_ETC">ETH_ETC</option>
+          <option value="USDT_ETC">USDT_ETC</option>
+          <option value="BTC_REP">BTC_REP</option>
+          <option value="USDT_REP">USDT_REP</option>
+          <option value="ETH_REP">ETH_REP</option>
+          <option value="BTC_ARDR">BTC_ARDR</option>
+          <option value="BTC_ZEC">BTC_ZEC</option>
+          <option value="ETH_ZEC">ETH_ZEC</option>
+          <option value="USDT_ZEC">USDT_ZEC</option>
+          <option value="XMR_ZEC">XMR_ZEC</option>
+          <option value="BTC_STRAT">BTC_STRAT</option>
+          <option value="BTC_NXC">BTC_NXC</option>
+          <option value="BTC_PASC">BTC_PASC</option>
+          <option value="BTC_GNT">BTC_GNT</option>
+          <option value="ETH_GNT">ETH_GNT</option>
+          <option value="BTC_GNO">BTC_GNO</option>
+          <option value="ETH_GNO">ETH_GNO</option>
+          <option value="BTC_BCH">BTC_BCH</option>
+          <option value="ETH_BCH">ETH_BCH</option>
+          <option value="USDT_BCH">USDT_BCH</option>
+          <option value="BTC_ZRX">BTC_ZRX</option>
+          <option value="ETH_ZRX">ETH_ZRX</option>
+      </select>
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="ticker-push">
+  <p>Retrives crypto coins prices from Poloniex</p>
+</script>

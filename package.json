@@ -15,7 +15,8 @@
     "nodes": {
       "poloniex-account": "poloniex-account.js",
       "portifolio": "portfolio.js",
-      "ticker": "ticker.js"
+      "ticker": "ticker.js",
+      "ticker-push": "ticker-push.js"
     }
   }
 }
