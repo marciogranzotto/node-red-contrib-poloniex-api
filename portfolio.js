@@ -1,7 +1,7 @@
 const TradingApi = require('poloniex-api').tradingApi
 
 module.exports = function(RED) {
-  function PortifolioNode(config) {
+  function PortfolioNode(config) {
     RED.nodes.createNode(this, config)
     var node = this
     this.showZeros = config.zeros
@@ -38,5 +38,5 @@ module.exports = function(RED) {
         })
     })
   }
-  RED.nodes.registerType('portifolio', PortifolioNode)
+  RED.nodes.registerType('portfolio', PortfolioNode)
 }

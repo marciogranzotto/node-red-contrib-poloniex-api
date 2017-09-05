@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  RED.nodes.registerType('portifolio', {
+  RED.nodes.registerType('portfolio', {
     category: 'poloniex',
     color: '#C0DEED',
     defaults: {
@@ -11,7 +11,7 @@
     outputs: 2,
     icon: "poloniex.png",
     label: function () {
-      return this.name || "portifolio";
+      return this.name || "portfolio";
     },
     inputLabels: "trigger",
     outputLabels: ["response", "error"],
@@ -19,7 +19,7 @@
 
 </script>
 
-<script type="text/x-red" data-template-name="portifolio">
+<script type="text/x-red" data-template-name="portfolio">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -34,6 +34,6 @@
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="portifolio">
+<script type="text/x-red" data-help-name="portfolio">
   <p>A simple node that wraps the poloniex-api npm package</p>
 </script>

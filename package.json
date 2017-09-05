@@ -13,8 +13,9 @@
   },
   "node-red": {
     "nodes": {
-      "portifolio": "portifolio.js",
-      "poloniex-account": "poloniex-account.js"
+      "poloniex-account": "poloniex-account.js",
+      "portifolio": "portfolio.js",
+      "ticker": "ticker.js"
     }
   }
 }
