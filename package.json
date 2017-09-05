@@ -1,7 +1,7 @@
 {
   "name": "node-red-poloniex-api",
   "version": "1.0.0",
-  "description": "Wrapper of poloniex-api npm package to use on node-red",
+  "description": "Wrapper of poloniex-api npm package so it can be used in Node-RED",
   "main": "poloniex-account.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
