@@ -35,5 +35,25 @@
 </script>
 
 <script type="text/x-red" data-help-name="portfolio">
-  <p>A simple node that wraps the poloniex-api npm package</p>
+  <p>When a message is received, this node requests you cryptocoin portfolio from the Poloniex exchange.</p>
+
+  <h3>Outputs</h3>
+  <ol class="node-ports">
+    <li>Response
+      <dl class="message-properties">
+        <dt>payload <span class="property-type">Object</span></dt>
+        <dd>the standard output of the command.</dd>
+      </dl>
+    </li>
+    <li>Error
+      <dl class="message-properties">
+        <dt>payload <span class="property-type">string</span></dt>
+        <dd>the standard error of the command.</dd>
+      </dl>
+    </li>
+  </ol>
+
+  <h3>Details</h3>
+  <p><code>msg.payload</code> is used as the payload of the published message. It contains a object with several fields. Each
+    key representes a coin (like <code>BTC</code> and it's value is a float that represents the quantity on your account.</p>
 </script>
