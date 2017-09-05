@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  RED.nodes.registerType('ticker', {
+    category: 'poloniex',
+    color: '#C0DEED',
+    defaults: {
+      name: { value: "" },
+    },
+    inputs: 1,
+    outputs: 2,
+    icon: "poloniex.png",
+    label: function () {
+      return this.name || "ticker";
+    },
+    inputLabels: "trigger",
+    outputLabels: ["response", "error"],
+  });
+
+</script>
+
+<script type="text/x-red" data-template-name="ticker">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="ticker">
+  <p>Retrives crypto coins prices from Poloniex</p>
+</script>
