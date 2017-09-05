@@ -1,5 +1,5 @@
 {
-  "name": "node-red-poloniex-api",
+  "name": "node-red-contrib-poloniex-api",
   "version": "1.0.0",
   "description": "Wrapper of poloniex-api npm package so it can be used in Node-RED",
   "main": "poloniex-account.js",
@@ -15,6 +15,7 @@
   "dependencies": {
     "poloniex-api": "latest"
   },
+  "keywords": ["node-red"],
   "node-red": {
     "nodes": {
       "poloniex-account": "poloniex-account.js",
