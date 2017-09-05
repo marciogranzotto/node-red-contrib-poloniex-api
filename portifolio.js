@@ -38,10 +38,5 @@ module.exports = function(RED) {
         })
     })
   }
-  RED.nodes.registerType('portifolio', PortifolioNode, {
-    credentials: {
-      key: { type: 'password' },
-      secret: { type: 'password' },
-    },
-  })
+  RED.nodes.registerType('portifolio', PortifolioNode)
 }
