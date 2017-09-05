@@ -13,7 +13,7 @@
   "author": "Marcio Granzotto Rodrigues",
   "license": "ISC",
   "dependencies": {
-    "poloniex-api": "latest"
+    "poloniex-api": "1.2.4"
   },
   "keywords": ["node-red"],
   "node-red": {
