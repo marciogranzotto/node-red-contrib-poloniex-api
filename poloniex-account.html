@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  RED.nodes.registerType('poloniex-account', {
+    category: 'config',
+    defaults: {
+      name: { value: "", required: true },
+      key: { value: "", required: true },
+      secret: { value: "", required: true },
+    },
+    label: function () {
+      return this.name;
+    }
+  });
+
+</script>
+
+<script type="text/x-red" data-template-name="poloniex-account">
+  <div class="form-row">
+    <label for="node-config-input-name"><i class="icon-bookmark"></i> Name</label>
+    <input type="text" id="node-config-input-name">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-key"><i class="icon-tag"></i> API Key</label>
+    <input type="password" id="node-config-input-key" placeholder="API Key">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-secret"><i class="icon-tag"></i> API Secret</label>
+    <input type="password" id="node-config-input-secret" placeholder="API Secret">
+  </div>
+</script>

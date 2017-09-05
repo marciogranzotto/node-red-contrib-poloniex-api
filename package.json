@@ -1,0 +1,20 @@
+{
+  "name": "node-red-poloniex-api",
+  "version": "1.0.0",
+  "description": "Wrapper of poloniex-api npm package to use on node-red",
+  "main": "poloniex-account.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcio Granzotto Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "poloniex-api": "latest"
+  },
+  "node-red": {
+    "nodes": {
+      "portifolio": "portifolio.js",
+      "poloniex-account": "poloniex-account.js"
+    }
+  }
+}
