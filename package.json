@@ -15,7 +15,7 @@
   "dependencies": {
     "poloniex-api": "1.2.4"
   },
-  "keywords": ["node-red"],
+  "keywords": ["node-red", "cryptocoins", "bitcoin", "exchange", "poloniex"],
   "node-red": {
     "nodes": {
       "poloniex-account": "poloniex-account.js",
